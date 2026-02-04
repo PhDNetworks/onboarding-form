@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Ads Onboarding | PhD Networks</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .logo h1 {
+            color: #E8611A;
+            font-size: 28px;
+            font-weight: 700;
+        }
+        .logo p {
+            color: #ccc;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        .form-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        .form-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .form-header h2 {
+            color: #1a1a1a;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .form-header p {
+            color: #666;
+            font-size: 15px;
+        }
+        .form-section {
+            margin-bottom: 30px;
+        }
+        .form-section h3 {
+            color: #E8611A;
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #E8611A;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        label .required {
+            color: #E8611A;
+        }
+        .help-text {
+            font-size: 12px;
+            color: #888;
+            margin-top: 4px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="url"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            font-family: inherit;
+        }
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #E8611A;
+            box-shadow: 0 0 0 3px rgba(232, 97, 26, 0.1);
+        }
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        .radio-group, .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .radio-option, .checkbox-option {
+            display: flex;
+            align-items: center;
+            padding: 12px 16px;
+            background: #f8f8f8;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .radio-option:hover, .checkbox-option:hover {
+            background: #f0f0f0;
+        }
+        .radio-option input, .checkbox-option input {
+            margin-right: 12px;
+            width: 18px;
+            height: 18px;
+            accent-color: #E8611A;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            background: #E8611A;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .submit-btn:hover {
+            background: #d55518;
+            transform: translateY(-2px);
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #888;
+            font-size: 13px;
+        }
+        .footer a {
+            color: #E8611A;
+            text-decoration: none;
+        }
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        @media (max-width: 600px) {
+            .two-col { grid-template-columns: 1fr; }
+            .form-card { padding: 25px; }
+        }
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .success-message h2 {
+            color: #28a745;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+        .success-message p {
+            color: #666;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <h1>PhD NETWORKS</h1>
+            <p>AI-Powered Google Ads Management</p>
+        </div>
+        
+        <div class="form-card">
+            <div class="form-header">
+                <h2>Google Ads Onboarding</h2>
+                <p>Complete this form to help us set up your campaign. We'll be in touch within 24 hours.</p>
+            </div>
+            
+            <form id="onboarding-form" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY">
+                <input type="hidden" name="subject" value="New Google Ads Client Onboarding">
+                <input type="hidden" name="from_name" value="PhD Networks Onboarding Form">
+                <input type="hidden" name="redirect" value="https://onboarding.phdnetworks.co.uk/?success=true">
+                
+                <!-- SECTION 1: Business Information -->
+                <div class="form-section">
+                    <h3>📋 Business Information</h3>
+                    
+                    <div class="two-col">
+                        <div class="form-group">
+                            <label>Business Name <span class="required">*</span></label>
+                            <input type="text" name="business_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Website URL <span class="required">*</span></label>
+                            <input type="url" name="website" placeholder="https://" required>
+                        </div>
+                    </div>
+                    
+                    <div class="two-col">
+                        <div class="form-group">
+                            <label>Your Name <span class="required">*</span></label>
+                            <input type="text" name="contact_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address <span class="required">*</span></label>
+                            <input type="email" name="email" required>
+                        </div>
+                    </div>
+                    
+                    <div class="two-col">
+                        <div class="form-group">
+                            <label>Phone Number <span class="required">*</span></label>
+                            <input type="tel" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Industry <span class="required">*</span></label>
+                            <select name="industry" required>
+                                <option value="">Select...</option>
+                                <option value="Construction & Trades">Construction & Trades</option>
+                                <option value="Professional Services">Professional Services</option>
+                                <option value="Healthcare & Dental">Healthcare & Dental</option>
+                                <option value="E-commerce">E-commerce / Retail</option>
+                                <option value="Hospitality">Hospitality & Food</option>
+                                <option value="Property">Property & Real Estate</option>
+                                <option value="Automotive">Automotive</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>What makes your business different from competitors?</label>
+                        <textarea name="differentiators" placeholder="Your unique selling points, experience, specialisations..."></textarea>
+                    </div>
+                </div>
+                
+                <!-- SECTION 2: Goals & Budget -->
+                <div class="form-section">
+                    <h3>🎯 Goals & Budget</h3>
+                    
+                    <div class="form-group">
+                        <label>What is your PRIMARY goal for Google Ads? <span class="required">*</span></label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="primary_goal" value="Generate leads" required>
+                                Generate leads (form submissions, enquiries)
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="primary_goal" value="Phone calls">
+                                Get more phone calls
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="primary_goal" value="Online sales">
+                                Drive online sales
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="primary_goal" value="Brand awareness">
+                                Increase brand awareness
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="primary_goal" value="Foot traffic">
+                                Drive foot traffic to physical location
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Monthly Google Ads Budget <span class="required">*</span></label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="budget" value="500-1000" required>
+                                £500 - £1,000
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="budget" value="1000-2000">
+                                £1,000 - £2,000
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="budget" value="2000-5000">
+                                £2,000 - £5,000
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="budget" value="5000+">
+                                £5,000+
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="budget" value="Need guidance">
+                                Not sure - need guidance
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="two-col">
+                        <div class="form-group">
+                            <label>Target cost per lead/sale?</label>
+                            <input type="text" name="target_cpa" placeholder="e.g., £20 per lead">
+                            <p class="help-text">How much are you willing to pay for each lead?</p>
+                        </div>
+                        <div class="form-group">
+                            <label>Average customer value?</label>
+                            <input type="text" name="customer_value" placeholder="e.g., £500 per job">
+                            <p class="help-text">What's a new customer worth to you?</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- SECTION 3: Services & Targeting -->
+                <div class="form-section">
+                    <h3>📍 Services & Targeting</h3>
+                    
+                    <div class="form-group">
+                        <label>Top 3-5 services/products to advertise <span class="required">*</span></label>
+                        <textarea name="services" placeholder="List the main services you want to promote..." required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Geographic targeting <span class="required">*</span></label>
+                        <textarea name="locations" placeholder="Where should ads show? e.g., 'Within 20 miles of Leeds', 'LS postcodes'" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Areas to EXCLUDE?</label>
+                        <input type="text" name="exclude_areas" placeholder="Any areas you don't want to target">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Who are your main competitors?</label>
+                        <textarea name="competitors" placeholder="Names or websites of 2-3 competitors"></textarea>
+                    </div>
+                </div>
+                
+                <!-- SECTION 4: Existing Setup -->
+                <div class="form-section">
+                    <h3>⚙️ Existing Setup</h3>
+                    
+                    <div class="form-group">
+                        <label>Do you have an existing Google Ads account? <span class="required">*</span></label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="existing_account" value="Yes" required>
+                                Yes - I'll share access
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="existing_account" value="No">
+                                No - need one created
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="existing_account" value="Start fresh">
+                                Yes, but want to start fresh
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Google Ads Account ID (if you have one)</label>
+                        <input type="text" name="ads_account_id" placeholder="XXX-XXX-XXXX">
+                        <p class="help-text">Found in top right corner of Google Ads</p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Do you need call tracking?</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="call_tracking" value="Yes">
+                                Yes - phone calls are important
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="call_tracking" value="No">
+                                No - not needed
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="call_tracking" value="Already have it">
+                                Already have it set up
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- SECTION 5: Communication -->
+                <div class="form-section">
+                    <h3>💬 Communication</h3>
+                    
+                    <div class="two-col">
+                        <div class="form-group">
+                            <label>Preferred contact method</label>
+                            <select name="contact_method">
+                                <option value="Email">Email</option>
+                                <option value="Phone">Phone</option>
+                                <option value="WhatsApp">WhatsApp</option>
+                                <option value="Video call">Video call</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>How often do you want updates?</label>
+                            <select name="update_frequency">
+                                <option value="Weekly">Weekly</option>
+                                <option value="Fortnightly">Fortnightly</option>
+                                <option value="Monthly">Monthly</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Anything else we should know?</label>
+                        <textarea name="additional_info" placeholder="Previous ad experience, specific concerns, important context..."></textarea>
+                    </div>
+                </div>
+                
+                <button type="submit" class="submit-btn">Submit Onboarding Form →</button>
+            </form>
+            
+            <div class="success-message" id="success">
+                <h2>✅ Form Submitted!</h2>
+                <p>Thank you! We'll review your answers and be in touch within 24 hours to schedule your kickoff call.</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Questions? <a href="mailto:danny@phdnetworks.co.uk">danny@phdnetworks.co.uk</a> | <a href="tel:01135341131">0113 534 1131</a></p>
+            <p style="margin-top: 10px;">© 2026 PhD Networks & Systems Ltd</p>
+        </div>
+    </div>
+    
+    <script>
+        // Check for success parameter
+        if (window.location.search.includes('success=true')) {
+            document.getElementById('onboarding-form').style.display = 'none';
+            document.getElementById('success').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
